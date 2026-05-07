@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dcpphjl4g8s0"]
+
+[ext_resource type="PackedScene" uid="uid://dys2uqxj27tn3" path="res://scenes/knight.tscn" id="1_gg23s"]
+[ext_resource type="Script" uid="uid://cmbkm52wmsk81" path="res://scripts/card_data.gd" id="1_k3d11"]
+[ext_resource type="Texture2D" uid="uid://grr6s42ea4i4" path="res://assets/sprites/sprKnight.png" id="2_1ppkj"]
+
+[resource]
+script = ExtResource("1_k3d11")
+card_name = "Cavaleiro"
+cost = 2
+card_scene = ExtResource("1_gg23s")
+card_texture = ExtResource("2_1ppkj")
+metadata/_custom_type_script = "uid://cmbkm52wmsk81"

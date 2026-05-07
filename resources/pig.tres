@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dk333nhyxmlpb"]
+
+[ext_resource type="Script" uid="uid://cmbkm52wmsk81" path="res://scripts/card_data.gd" id="1_553p8"]
+[ext_resource type="PackedScene" uid="uid://j45dlym1c3ti" path="res://scenes/pig.tscn" id="1_pfbe1"]
+[ext_resource type="Texture2D" uid="uid://djot6uj6phwo2" path="res://assets/sprites/sprPig.png" id="2_21dgg"]
+
+[resource]
+script = ExtResource("1_553p8")
+card_name = "Porco"
+card_scene = ExtResource("1_pfbe1")
+card_texture = ExtResource("2_21dgg")
+metadata/_custom_type_script = "uid://cmbkm52wmsk81"

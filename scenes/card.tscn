@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bpudrhun1pddw"]
+
+[ext_resource type="Script" uid="uid://dttc5rulcmmec" path="res://scripts/card.gd" id="1_d81rb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6u4wf"]
+font_size = 22
+
+[node name="Card" type="Panel" unique_id=1169916490]
+custom_minimum_size = Vector2(180, 250)
+offset_right = 180.0
+offset_bottom = 250.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_d81rb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=394001199]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="TopBar" type="HBoxContainer" parent="VBoxContainer" unique_id=1596252914]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/TopBar" unique_id=1991066854]
+layout_mode = 2
+text = "NOME"
+label_settings = SubResource("LabelSettings_6u4wf")
+
+[node name="ArtContainer" type="TextureRect" parent="VBoxContainer" unique_id=1067095370]
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 1
+stretch_mode = 4
