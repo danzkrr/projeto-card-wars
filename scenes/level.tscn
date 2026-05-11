@@ -1,44 +1,43 @@
 [gd_scene format=3 uid="uid://cjoupasoqlsx2"]
 
-[ext_resource type="Script" uid="uid://da1lckj0encf7" path="res://scripts/board.gd" id="1_w7c3h"]
+[ext_resource type="Script" uid="uid://cs48wthgd3phl" path="res://scripts/board_zone.gd" id="1_2r41h"]
 [ext_resource type="Texture2D" uid="uid://bksgi6o1vhhms" path="res://assets/sprites/sprBoard.png" id="1_w8frs"]
 [ext_resource type="PackedScene" uid="uid://bpudrhun1pddw" path="res://scenes/card.tscn" id="3_w8frs"]
 [ext_resource type="Resource" uid="uid://dk333nhyxmlpb" path="res://resources/pig.tres" id="4_mx8sn"]
 [ext_resource type="Resource" uid="uid://dcpphjl4g8s0" path="res://resources/knight.tres" id="5_ppgk2"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8frs"]
-size = Vector2(2, 128)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppgk2"]
+size = Vector2(128, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2r41h"]
+size = Vector2(128, 64)
 
 [node name="Level" type="Node2D" unique_id=314334591]
 
-[node name="Board" type="StaticBody2D" parent="." unique_id=174115030]
-script = ExtResource("1_w7c3h")
-
-[node name="Sprite" type="Sprite2D" parent="Board" unique_id=1529322512]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1529322512]
 texture = ExtResource("1_w8frs")
 
-[node name="CollisionRight" type="CollisionShape2D" parent="Board" unique_id=762364377]
-position = Vector2(63, 0)
-shape = SubResource("RectangleShape2D_w8frs")
+[node name="BoardZoneEnemy" type="Area2D" parent="." unique_id=973076194]
+script = ExtResource("1_2r41h")
+team = 1
 
-[node name="CollisionLeft" type="CollisionShape2D" parent="Board" unique_id=393814745]
-position = Vector2(-63, 0)
-shape = SubResource("RectangleShape2D_w8frs")
+[node name="CollisionShape" type="CollisionShape2D" parent="BoardZoneEnemy" unique_id=947025800]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_ppgk2")
 
-[node name="CollisionUp" type="CollisionShape2D" parent="Board" unique_id=1444507205]
-position = Vector2(0, -63)
-rotation = -1.5707964
-shape = SubResource("RectangleShape2D_w8frs")
+[node name="BoardZonePlayer" type="Area2D" parent="." unique_id=898760849]
+script = ExtResource("1_2r41h")
 
-[node name="CollisionDown" type="CollisionShape2D" parent="Board" unique_id=1678847271]
-position = Vector2(0, 63)
-rotation = -1.5707964
-shape = SubResource("RectangleShape2D_w8frs")
+[node name="CollisionShape" type="CollisionShape2D" parent="BoardZonePlayer" unique_id=37006844]
+position = Vector2(0, 32)
+shape = SubResource("RectangleShape2D_2r41h")
 
 [node name="Camera" type="Camera2D" parent="." unique_id=2014174131]
 zoom = Vector2(5, 5)
 
-[node name="Card" parent="." unique_id=1169916490 instance=ExtResource("3_w8frs")]
+[node name="Hand" type="Node" parent="." unique_id=723177593]
+
+[node name="Card" parent="Hand" unique_id=1169916490 instance=ExtResource("3_w8frs")]
 offset_left = -107.00001
 offset_top = 34.0
 offset_right = 72.99999
@@ -46,7 +45,7 @@ offset_bottom = 284.0
 scale = Vector2(0.1, 0.1)
 data = ExtResource("4_mx8sn")
 
-[node name="Card2" parent="." unique_id=311253299 instance=ExtResource("3_w8frs")]
+[node name="Card2" parent="Hand" unique_id=311253299 instance=ExtResource("3_w8frs")]
 offset_left = -86.00001
 offset_top = 34.0
 offset_right = 93.99999
